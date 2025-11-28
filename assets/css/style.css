@@ -98,66 +98,105 @@ body.dark .navbar {
   .nav-links.active { right: 0; }
 }
 
-/* HERO */
+/* HERO — avec image + overlay sombre */
 #hero {
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   padding: 0 24px;
+
+  background-image: url("assets/img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero-content {
-  margin-top: 140px;
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 1;
 }
 
-.hero-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  margin-bottom: 22px;
+#hero * {
+  position: relative;
+  z-index: 2;
 }
 
 #hero h1 {
   font-size: 3rem;
   font-weight: 300;
+  color: #fff;
 }
 
-.hero-subtitle {
-  color: var(--accent);
+#hero h2 {
+  font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 28px;
-  font-size: 1.2rem;
+  color: #e5e5e5;
 }
 
-/* BUTTONS */
-.btn,
+/* BUTTONS — VERSION CORRIGÉE */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Outline button */
 .btn-ghost {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 12px 28px;
-  margin: 0 auto;
   border-radius: 8px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--text);
   background: transparent;
   color: var(--text);
-  text-decoration: none;
   font-weight: 500;
-  transition: 0.2s;
+  text-decoration: none;
+  transition: 0.25s ease;
+  cursor: pointer;
 }
 
-.btn:hover,
 .btn-ghost:hover {
-  background: rgba(0,0,0,0.05);
+  background: var(--text);
+  color: var(--bg);
   transform: translateY(-2px);
 }
 
-body.dark .btn:hover,
+body.dark .btn {
+  background: var(--card);
+  color: var(--text);
+}
+
+body.dark .btn-ghost {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 body.dark .btn-ghost:hover {
-  background: rgba(255,255,255,0.08);
+  background: var(--accent);
+  color: var(--bg);
 }
 
 /* SECTIONS */
