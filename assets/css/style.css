@@ -142,20 +142,42 @@ body.dark .navbar {
 }
 
 /* BUTTONS — VERSION CORRIGÉE */
+/* 🔥 Style modernisé et intuitif pour tous les boutons */
 .btn {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  padding: 12px 28px;
-  border-radius: 8px;
-  border: none;
-  background: var(--text);
-  color: var(--bg);
+  justify-content: center;
+
+  padding: 14px 28px;
+  margin: 12px 0;
+
+  background-color: #4A63FF; /* bleu moderne */
+  color: #fff;
+  font-size: 1.1rem;
   font-weight: 600;
-  text-decoration: none;
-  transition: 0.25s ease;
+  letter-spacing: 0.5px;
+
+  border: none;
+  border-radius: 14px;
+
   cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
+
+/* 🌟 Effet au survol : plus clair + léger zoom */
+.btn:hover {
+  background-color: #627BFF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+}
+
+/* 👉 Effet clic */
+.btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
 
 .btn:hover {
   opacity: 0.85;
@@ -286,4 +308,18 @@ footer {
   text-align: center;
   padding: 40px;
   border-top: 1px solid var(--line);
+}
+
+/* Centrage du bouton CV */
+#cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#cv .btn {
+  display: block;
+  margin: 0 auto;
+}
+#cv {
+  text-align: center;
 }
