@@ -285,6 +285,30 @@ h2 {
   margin-top: 16px;
 }
 
+/* EXPERIENCE */
+
+.experiences-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.experiences {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* .project img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+} */
+
 /* CONTACT */
 form {
   max-width: 600px;
